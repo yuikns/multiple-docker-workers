@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  foo:
+    image: ubuntu
+    restart: always
+    volumes:
+      - ./scripts:/scripts
+    environment:
+      - CONTAINER=container-foo
+    command: ["/scripts/start1.sh", "args-fooooo"]
+
+  bar:
+    image: ubuntu
+    restart: always
+    volumes:
+      - ./scripts:/scripts
+    environment:
+      - CONTAINER=container-bar
+    command: ["/scripts/start1.sh", "args-bar"]
